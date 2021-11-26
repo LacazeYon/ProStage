@@ -15,6 +15,17 @@ class ProStageController extends AbstractController
     {
         return $this->render('pro_stage/index.html.twig', [
             'controller_name' => 'ProStageController',
+            'titre' => 'Bienvenue sur la page d\'accueil de Prostages'
+        ]);
+    }
+    /**
+     * @Route("/entreprises", name="pro_stage_entreprise")
+     */
+    public function index_entreprise(): Response
+    {
+        return $this->render('pro_stage/index.html.twig', [
+            'controller_name' => 'ProStageController',
+            'titre' => 'Cette page affichera la liste des entreprises proposant un stage',
         ]);
     }
 }
