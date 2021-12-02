@@ -19,13 +19,33 @@ class ProStageController extends AbstractController
         ]);
     }
     /**
-     * @Route("/entreprises", name="pro_stage_entreprise")
+     * @Route("/entreprises", name="pro_stage_entreprises")
      */
-    public function index_entreprise(): Response
+    public function index_entreprises(): Response
     {
         return $this->render('pro_stage/index.html.twig', [
             'controller_name' => 'ProStageController',
             'titre' => 'Cette page affichera la liste des entreprises proposant un stage',
+        ]);
+    }
+    /**
+     * @Route("/formations", name="pro_stage_formations")
+     */
+    public function index_formations(): Response
+    {
+        return $this->render('pro_stage/index.html.twig', [
+            'controller_name' => 'ProStageController',
+            'titre' => 'Cette page affichera la liste des formations de l\'IUT',
+        ]);
+    }
+    /**
+     * @Route("/stage/{id}", name="pro_stage_stage")
+     */
+    public function index_stage($id): Response
+    {
+        return $this->render('pro_stage/index.html.twig', [
+            'controller_name' => 'ProStageController',
+            'titre' => 'Cette page affichera le descriptif du stage ayant pour identifiant ' . $id,
         ]);
     }
 }
