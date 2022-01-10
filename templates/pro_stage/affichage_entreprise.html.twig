@@ -1,4 +1,19 @@
 {%  extends 'base.html.twig' %}
 {% block body %}
-<h1>Cette page affichera la liste des entreprises proposant un stage</h1>
+<h1>Liste des entreprise</h1>
+{% for entreprise in entreprises %}
+    <div class="container">
+        <div class="row">
+        <div class="col">
+         {{entreprise.nom}}
+        </div>
+        <div class="col">
+         {{entreprise.adresse}}
+        </div>
+        <div class="col">
+         {{entreprise.activite}}
+        </div>
+        </div>
+        </div>
+{% endfor %}
 {% endblock %}

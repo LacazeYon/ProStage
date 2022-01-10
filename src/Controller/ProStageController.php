@@ -22,8 +22,11 @@ class ProStageController extends AbstractController
      */
     public function index_entreprises(): Response
     {
+        $repositoryEntreprise = $this->getDoctrine()->getRepository(Entreprise::class);
+        $entreprises = $repositoryEntreprise->find();
         return $this->render('pro_stage/affichage_entreprise.html.twig', [
             'controller_name' => 'ProStageController',
+            'entreprises' => $entreprises,
         ]);
     }
     /**
