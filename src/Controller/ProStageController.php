@@ -45,4 +45,13 @@ class ProStageController extends AbstractController
             'id' => $id,
         ]);
     }
+    /**
+     * @Route("/filtrer", name="pro_stage_filtrer")
+     */
+    public function index_filtrer(): Response
+    {
+        return $this->render('pro_stage/filtrer.html.twig', [
+            'controller_name' => 'ProStageController',
+        ]);
+    }
 }
