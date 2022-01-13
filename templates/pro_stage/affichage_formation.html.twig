@@ -1,19 +1,24 @@
 {%  extends 'base.html.twig' %}
 {% block body %}
 <h1>Liste des formations</h1>
-{% for formation in formations %}
-    <div class="container">
-        <div class="row">
-        <div class="col">
-        <button onclick="window.location.href = '{{path('pro_stage_stage_par_formation', {'id': formation.id})}}';">filtrer</button>
-        </div>
-        <div class="col">
-         {{formation.nomCourt}}
-        </div>
-        <div class="col">
-         {{formation.nomLong}}
-        </div>
-        </div>
-        </div>
-{% endfor %}
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">nomCourt</th>
+      <th scope="col">nomLong</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for formation in formations %}
+    <tr>
+      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage_par_formation', {'id': formation.id})}}';">filtrer</button></td>
+      <td>{{formation.nomCourt}}</td>
+      <td>{{formation.nomLong}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

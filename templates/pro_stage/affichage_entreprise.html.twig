@@ -1,22 +1,25 @@
 {%  extends 'base.html.twig' %}
 {% block body %}
 <h1>Liste des entreprise</h1>
-{% for entreprise in entreprises %}
-    <div class="container">
-        <div class="row">
-        <div class="col">
-        <button onclick="window.location.href = '{{path('pro_stage_stage_par_entreprise', {'id': entreprise.id})}}';">filtrer</button>
-        </div>
-        <div class="col">
-         {{entreprise.nom}}
-        </div>
-        <div class="col">
-         {{entreprise.adresse}}
-        </div>
-        <div class="col">
-         {{entreprise.activite}}
-        </div>
-        </div>
-        </div>
-{% endfor %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">nom</th>
+      <th scope="col">adresse</th>
+      <th scope="col">activité</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for entreprise in entreprises %}
+    <tr>
+      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage_par_entreprise', {'id': entreprise.id})}}';">filtrer</button></td>
+      <td>{{entreprise.nom}}</td>
+      <td>{{entreprise.adresse}}</td>
+      <td>{{entreprise.activite}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}

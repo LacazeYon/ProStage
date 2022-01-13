@@ -2,19 +2,23 @@
 
 {% block body %}
 <h1>Liste des stage de l'entreprise {{entreprise.nom}} </h1>
-{% for stage in stages %}
-    <div class="container">
-        <div class="row">
-        <div class="col">
-        <button onclick="window.location.href = '{{path('pro_stage_stage', {'id': stage.id})}}';">afficher</button>
-        </div>
-        <div class="col">
-         {{stage.titre}}
-        </div>
-        <div class="col">
-         {{stage.mission}}
-        </div>
-        </div>
-        </div>
-{% endfor %}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col"> </th>
+      <th scope="col">titre</th>
+      <th scope="col">mission</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for stage in stages %}
+    <tr>
+      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage', {'id': stage.id})}}';">afficher</button></td>
+      <td>{{stage.titre}}</td>
+      <td>{{stage.mission}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
