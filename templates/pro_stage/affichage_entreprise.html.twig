@@ -14,7 +14,7 @@
   <tbody>
     {% for entreprise in entreprises %}
     <tr>
-      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage_par_entreprise', {'id': entreprise.id})}}';">filtrer</button></td>
+      <td scope="row"><a href = "{{path('pro_stage_stage_par_entreprise', {'id': entreprise.id})}}">Filtrer</a></td>
       <td>{{entreprise.nom}}</td>
       <td>{{entreprise.adresse}}</td>
       <td>{{entreprise.activite}}</td>

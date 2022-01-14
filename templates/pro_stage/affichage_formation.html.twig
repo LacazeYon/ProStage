@@ -14,7 +14,7 @@
   <tbody>
     {% for formation in formations %}
     <tr>
-      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage_par_formation', {'id': formation.id})}}';">filtrer</button></td>
+      <td scope="row"><a href = "{{path('pro_stage_stage_par_formation', {'id': formation.id})}}">Filtrer</a></td>
       <td>{{formation.nomCourt}}</td>
       <td>{{formation.nomLong}}</td>
     </tr>

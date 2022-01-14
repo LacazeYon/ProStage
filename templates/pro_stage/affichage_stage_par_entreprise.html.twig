@@ -14,7 +14,7 @@
   <tbody>
     {% for stage in stages %}
     <tr>
-      <td scope="row"><button onclick="window.location.href = '{{path('pro_stage_stage', {'id': stage.id})}}';">afficher</button></td>
+      <td scope="row"><a href = "{{path('pro_stage_stage', {'id': stage.id})}}">afficher</a></td>
       <td>{{stage.titre}}</td>
       <td>{{stage.mission}}</td>
     </tr>
